@@ -87,7 +87,7 @@ void loop() {
       aut = 1;
       Serial.print(aut);
     }
-    if ((xValue == 0)) {
+    if ((xValue == 4)) {
     digitalWrite(in1, HIGH);
     digitalWrite(in2, LOW);
     digitalWrite(in3, HIGH);
@@ -115,3 +115,58 @@ void loop() {
     }
   }
 }
+
+// void loop() {
+//   if (Serial.available()) {
+//     String data = Serial.readStringUntil('\n');
+//     int xValue, yValue, speedValue;
+//     sscanf(data.c_str(), "%d,%d,%d", &xValue, &yValue, &speedValue);
+
+//     Serial.print("X: "); Serial.print(xValue);
+//     Serial.print(" Y: "); Serial.print(yValue);
+//     Serial.print(" Speed: "); Serial.println(speedValue);
+
+//     int motorSpeed = map(speedValue, 0, 255, 0, 255);
+
+//     if (yValue > 500) {  // Forward
+//       digitalWrite(in1, HIGH);
+//       digitalWrite(in2, LOW);
+//       digitalWrite(in3, HIGH);
+//       digitalWrite(in4, LOW);
+//       analogWrite(enA, motorSpeed);
+//       analogWrite(enB, motorSpeed);
+//     } 
+//     else if (yValue < -500) {  // Backward
+//       digitalWrite(in1, LOW);
+//       digitalWrite(in2, HIGH);
+//       digitalWrite(in3, LOW);
+//       digitalWrite(in4, HIGH);
+//       analogWrite(enA, motorSpeed);
+//       analogWrite(enB, motorSpeed);
+//     } 
+//     else if (xValue > 500) {  // Right
+//       digitalWrite(in1, HIGH);
+//       digitalWrite(in2, LOW);
+//       digitalWrite(in3, LOW);
+//       digitalWrite(in4, HIGH);
+//       analogWrite(enA, motorSpeed);
+//       analogWrite(enB, motorSpeed);
+//     } 
+//     else if (xValue < -500) {  // Left
+//       digitalWrite(in1, LOW);
+//       digitalWrite(in2, HIGH);
+//       digitalWrite(in3, HIGH);
+//       digitalWrite(in4, LOW);
+//       analogWrite(enA, motorSpeed);
+//       analogWrite(enB, motorSpeed);
+//     } 
+//     else if (xValue == 0) {  // Stop
+//       digitalWrite(in1, LOW);
+//       digitalWrite(in2, LOW);
+//       digitalWrite(in3, LOW);
+//       digitalWrite(in4, LOW);
+//       analogWrite(enA, 0);
+//       analogWrite(enB, 0);
+//     }
+//   }
+// }
